@@ -16,7 +16,7 @@ jobs:
             pkgarch: aarch64_cortex-a53
             target: mediatek
             subtarget: filogic
-            vermagic: "6ace983a14b769f576fe9c4c7961bd89"
+            vermagic: "9469a6c8c449c47e503c05678ea1559d"
 
     steps:
       - uses: actions/checkout@v4
