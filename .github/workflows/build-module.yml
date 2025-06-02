@@ -57,6 +57,9 @@ jobs:
 
           make defconfig
 
+          echo -e "\e[1m\e[31m>>> Override VERMAGIC!\e[0m"
+          sed -i 's/grep '\''=\[ym\]'\'' \$(LINUX_DIR)\/\.config\.set | LC_ALL=C sort | \$(MKHASH) md5 > \$(LINUX_DIR)\/\.vermagic.*/echo "${{ matrix.build_env.vermagic }}" > \$(LINUX_DIR)\/\.vermagic/' ./include/kernel-defaults.mk
+
           echo "    > make tools/install"
           make tools/install -i -j `nproc`
 
